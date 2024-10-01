@@ -30,4 +30,12 @@ final class SwiftDataStructuresTests: XCTestCase {
         heap.insert(1)
         XCTAssertEqual(heap.remove(), 10)
     }
+    
+    func test_diveDown() {
+        heap.insert(1)
+        heap.insert(55)
+        heap.insert(2)
+        heap.remove(at: 1)
+        XCTAssertEqual(heap.description, "[55, 2]")
+    }
 }
