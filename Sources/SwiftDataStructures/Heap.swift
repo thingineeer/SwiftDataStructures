@@ -136,3 +136,9 @@ public struct Heap<T: Comparable> {
         diveDown(from: temp, until: endIndex)
     }
 }
+
+extension Heap: CustomStringConvertible {
+    public var description: String {
+        return elements.description
+    }
+}
