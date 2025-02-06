@@ -21,9 +21,9 @@ class DoublyNode<T> {
     }
 }
 
-// MARK: - DoubleLinkedList
+// MARK: - DoublyLinkedList
 
-class DoubleLinkedList<T: Equatable> {
+class DoublyLinkedList<T: Equatable> {
     private var head: DoublyNode<T>?
     private var tail: DoublyNode<T>?
     
@@ -56,7 +56,7 @@ class DoubleLinkedList<T: Equatable> {
         }
         
         tail?.prev?.next = tail?.next
-        tail = tail?.prev
+        tail = tail?.prev // tail의 값을, 삭제하기 전 tail?.prev 노드로 변경 <바로 앞에 것>
     }
     
     /// O(N) - 앞에서부터 탐색
@@ -85,5 +85,24 @@ class DoubleLinkedList<T: Equatable> {
         }
         
         return node
+    }
+}
+
+extension DoublyLinkedList: CustomStringConvertible {
+    var description: String {
+        var result = ""
+        var currentNode = head
+        
+        while currentNode != nil {
+            if let data = currentNode?.data {
+                result += "[\(data)]"
+                if currentNode?.next != nil {
+                    result += " <-> "
+                }
+            }
+            currentNode = currentNode?.next
+        }
+        
+        return result.isEmpty ? "[]" : result
     }
 }
