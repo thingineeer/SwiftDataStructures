@@ -27,6 +27,8 @@ class LinkedList<T: Equatable> {
 }
 
 extension LinkedList {
+    
+    // O(N)
     func append(_ data: T) {
         
         if head == nil { // head가 없는 경우 새로온 붙힌 노드가 head
@@ -44,6 +46,7 @@ extension LinkedList {
         
     }
     
+    // O(N)
     func insert(data: T?, index: Int) {
         if head == nil {
             head = Node(data: data)
@@ -63,11 +66,12 @@ extension LinkedList {
         currentNode?.next?.next = nextNode
     }
     
+    // O(N)
     func removeLast() {
         
         if head == nil { return }
         
-     // head를 삭제하는 경우
+        // head를 삭제하는 경우
         if head?.next == nil {
             head = nil
             return
@@ -81,8 +85,8 @@ extension LinkedList {
         currentNode?.next = currentNode?.next?.next
         
     }
-
     
+    // O(N)
     func remove(at index: Int) {
         if head == nil { return }
         
@@ -102,6 +106,7 @@ extension LinkedList {
         currentNode?.next = currentNode?.next?.next
     }
     
+    // O(N)
     func searchNode(data: T?) -> Node<T>? {
         if head == nil { return nil }
         
