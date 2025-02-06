@@ -1,7 +1,7 @@
 import XCTest
 @testable import SwiftDataStructures
 
-final class SwiftDataStructuresTests: XCTestCase {
+final class HeapTests: XCTestCase {
     
     var heap: Heap<Int>!
     
